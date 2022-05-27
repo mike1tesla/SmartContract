@@ -1,0 +1,53 @@
+cấu trúc 
+*Khai báo License: //SPDX-License-Identifier: MIT
+1. Khai báo: pragma solidity ^0.8.11(version)
+2. Tên hợp đồng: contract nameContract {...}
+3. Biến: string public name;
+	 string public nameAction = " Hello Work "; 
+	
+SOLIDITY FUNCTION DEFINITION
+
+function <function_name>(<param_type> <param_name>) <visibility> <state mutanility> [returns(<return_type>)] {...}	
+
+VD:      funcName  visibility state            return type
+            |            |      |                  |
+function getGreeting() public view returns (string memory) {
+	return string ( abi.encodePacked( greetingPrefix, name));
+    } 	
+VISIBILITY:
+	private: chỉ được hiển thị trong contract hiện tại, không thể đc gọi bởi bất kì các contract khác 
+	internal: có thể được gọi bởi contract hiện tại hoặc bất kì contract nhỏ
+	external: chỉ hiển thị bên ngoài, tuy nhiên có thể được truy cập trong contract hiện tại thông qua 'this.func'
+	public: nếu không chỉ định mặc định kiểu của func ở dạng public,
+		nó hiển thị cả ở internally và externally
+STATE MUTABILITY: 
+	view: hàm được khai báo với chế độ xem có thể đọc trạng thái nhưng không sửa đổi
+	pure: hàm được khai báo với pure không thể đọc hoặc sửa đổi trạng thái
+	payable: chức năng được khai báo với khoản phải trả có thể chấp nhận Ether được gửi đến hợp đồng. 
+		 Nếu 'payable' không được chỉ định, chức năng sẽ tự động từ chối tất cả Ether được gửi đến nó
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
